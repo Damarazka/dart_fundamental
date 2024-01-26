@@ -31,7 +31,7 @@ void main(){
 
   // operator logika
   // logika AND
-  print(true && false);
+  /* print(true && false);
   print(false && true);
   print(false && false);
   print(true && true);
@@ -44,5 +44,5 @@ void main(){
 
   // logika NOT
   print(!true);
-  print(!false);
+  print(!false); */
 }
