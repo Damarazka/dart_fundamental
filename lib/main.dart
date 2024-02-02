@@ -1,4 +1,5 @@
 import 'package:dart_fundamental/first.dart';
+import 'package:dart_fundamental/main_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.amber,
       ),
-      home: const FirstPage(),
+      initialRoute: '/',
+      routes: {
+        '/':(context) => const MainPage(),
+        '/ind':(context) => const FirstPage()
+      },
     );
   }
 }
