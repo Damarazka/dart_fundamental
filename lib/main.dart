@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.amber,
+        appBarTheme: const AppBarTheme(color: Colors.amber)
       ),
       initialRoute: '/',
       routes: {
