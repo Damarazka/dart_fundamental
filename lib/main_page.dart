@@ -19,7 +19,11 @@ class MainPage extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/press');
-                  }, child: Text("Press Button"))
+                  }, child: Text("Press Button")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/mwd', arguments: "assalamualaikum");
+                  }, child: Text("Move With Data"))
             ],
           ),
         );
