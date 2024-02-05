@@ -44,9 +44,21 @@ class MainPage extends StatelessWidget {
                 final result = await Navigator.pushNamed(context, '/rds');
                 final message = result != null ? result : "Data Kosong";
 
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(message.toString())),
-                );
+                if (message is Map) {
+                  final name = message['name'];
+                  final address = message['address'];
+                  final age = message['age'];
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text(
+                            "halo nama saya $name \nsaya orang $address \numur saya $age")),
+                  );
+                }else{
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text(message.toString())),
+                  );
+                }
               },
               child: const Text("Move With Data"),
             ),
