@@ -9,17 +9,19 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Main Page"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/ind');
-                }, child: Text("Increment & Decrement"))
-          ],
-        ),
-      ),
-    );
+      body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/ind');
+                  }, child: Text("Increment & Decrement")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/press');
+                  }, child: Text("Press Button"))
+            ],
+          ),
+        );
   }
 }
