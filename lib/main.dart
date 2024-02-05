@@ -1,6 +1,7 @@
 import 'package:dart_fundamental/first.dart';
 import 'package:dart_fundamental/main_page.dart';
 import 'package:dart_fundamental/press.dart';
+import 'package:dart_fundamental/return_data.dart';
 import 'package:dart_fundamental/third_page.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +23,9 @@ class MyApp extends StatelessWidget {
         '/': (context) => const MainPage(),
         '/ind': (context) => const FirstPage(),
         '/press': (context) => const PressPage(),
-        '/mwd': (context) => MoveWithData(
-            ModalRoute.of(context)?.settings.arguments as String),
+        '/mwd': (context) =>
+            MoveWithData(ModalRoute.of(context)?.settings.arguments as String),
+        '/rds': (context) => ReturnDataScreen(),
       },
     );
   }

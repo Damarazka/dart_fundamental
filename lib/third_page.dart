@@ -8,7 +8,7 @@ class MoveWithData extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("move with daata"),
+        title: const Text("move with daata"),
       ),
       body: Center(
         child: Column(
@@ -19,7 +19,7 @@ class MoveWithData extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("back"))
+                child: const Text("back"))
           ],
         ),
       ),
