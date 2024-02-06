@@ -15,22 +15,22 @@ class MainPage extends StatelessWidget {
           crossAxisAlignment:
               CrossAxisAlignment.center, // Center buttons horizontally
           children: <Widget>[
-            // Margin between buttons using SizedBox
-            SizedBox(height: 10), // Vertical margin
+            // Margin between buttons using const SizedBox
+            const SizedBox(height: 10), // Vertical margin
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/ind');
               },
               child: const Text("Increment & Decrement"),
             ),
-            SizedBox(height: 10), // Vertical margin
+            const SizedBox(height: 10), // Vertical margin
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/press');
               },
               child: const Text("Press Button"),
             ),
-            SizedBox(height: 10), // Vertical margin
+            const SizedBox(height: 10), // Vertical margin
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/mwd',
@@ -38,29 +38,48 @@ class MainPage extends StatelessWidget {
               },
               child: const Text("Move With Data"),
             ),
-            SizedBox(height: 10), // Vertical margin
+            const SizedBox(height: 10), // Vertical margin
             ElevatedButton(
               onPressed: () async {
                 final result = await Navigator.pushNamed(context, '/rds');
-                final message = result != null ? result : "Data Kosong";
-
+                final message = result != null ?  result : "Data Kosong";
+                
                 if (message is Map) {
                   final name = message['name'];
                   final address = message['address'];
                   final age = message['age'];
-                  ScaffoldMessenger.of(context).showSnackBar(
+                  if (name == null || address == null || age == null) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("Data belum diisi lengkap")),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                         content: Text(
                             "halo nama saya $name \nsaya orang $address \numur saya $age")),
                   );
-                }else{
+                  }
+                } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                        content: Text(message.toString())),
+                    SnackBar(content: Text(message.toString())),
                   );
                 }
               },
               child: const Text("Move With Data"),
+            ),
+            const SizedBox(height: 10), // Vertical margin
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/rp');
+              },
+              child: const Text("Refresh Page"),
+            ),
+            const SizedBox(height: 10), // Vertical margin
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/lp');
+              },
+              child: const Text("last page"),
             ),
           ],
         ),
